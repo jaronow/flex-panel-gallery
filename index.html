@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flex Gallery</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <h1>See The Pretty Pics</h1>
+    <div class="controls">
+    <label for="background">Change Backgroud Color</label>
+    <input type="color" name="background" value="#193549">
+    <label for="text-color">Change Text Color</label>
+    <input id="text-color" type="color" name="color" value="white">
+    </div>
+  </body>
+  <script type="text/javascript">
+  const inputs = document.querySelectoryAll('.controls input')
+  function updateStyle() {
+    document.documentElement.style.setProperty(`--${this.name}`, this.value);
+  }
+  inputs.forEach(input => input.addEventListener('change', updateStyle));
+  </script>
+</html>
