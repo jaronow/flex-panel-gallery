@@ -1,7 +1,6 @@
 :root {
   --background: #193549;
   --color: white;
-  --panel-background: #6B0F9C;
 }
 
 *, *:before, *:after {
@@ -14,6 +13,7 @@ html {
 
 body {
   background: var(--background);
+  margin: 0;
 }
 
 h1 {
@@ -48,7 +48,6 @@ input {
 .panel {
   background-size: cover;
   background-position: center;
-  background: var(--panel-background);
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -64,10 +63,26 @@ input {
 .panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
 
 .panel > * {
+  margin: 0;
   width: 100%;
-  border: 2px solid red;
   flex: 1 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.panel > *:first-child {
+  transform: translateY(-100%);
+}
+
+.panel > *:last-child {
+  transform: translateY(100%);
+}
+
+.panel.open-active > *:first-child {
+  transform: translateY(0);
+}
+
+.panel.open-active > *:last-child {
+  transform: translateY(0);
 }
